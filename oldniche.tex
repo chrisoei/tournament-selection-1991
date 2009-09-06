@@ -1,0 +1,416 @@
+
+\documentstyle[12pt]{article}
+\title{Tournament Selection and the Loss of Genetic Diversity}
+\author{David E. Goldberg\\S. J. Chang\\C. K. Oei}
+\begin{document}
+\maketitle
+\input epsf
+
+{\noindent\narrower
+Abstract:
+In this article we examine tournament selection when used in combination with
+several
+mechanisms for preserving genetic diversity.  We make analytical predictions
+for the rate of loss of genetic diversity for sharing and Boltzman tournament
+selection, and propose a new method.  We test our predictions using computer
+simulations.
+}
+
+\section{Introduction}
+Tournament selection has several advantages over other methods of selection:
+low noise, local interactions, and rank-based selection.  Unfortunately,
+attempts at preserving genetic diversity through sharing and tournament
+selection have been unsatisfactory because they require a large population to
+sustain the niches.
+
+\section{Tournament Selectiona and Sharing}
+To see why tournament selection runs into problems when combined with niching,
+let us consider the following simple model.  Consider a population of
+single-bit strings, each with equal fitness.  Sharing makes the sub-population
+with the least number of members the most fit, after the sharing is taken into
+account.  Let $n$ be the number of 1's in the population, which is of size $N$.
+Then the time evolution of the system is given by:
+\begin{equation}
+n_+=\left\{ \begin{array}{ll}
+	\frac{n^2}{N} & \mbox{for $n>N/2$} \\
+	\frac{n^2}{N} + 2 \frac{(N-n)n}{N} & \mbox{for $n<N/2$}
+	\end{array}
+\right. 
+\end{equation}
+where $n_+$ is the number of 1's in the next generation.  It is easier to
+see what is happening if we look at the ratio of the number of 1's to the
+total population: $r=n/N$.  The evolution becomes:
+\begin{equation}
+r_+=\left\{ \begin{array}{ll}
+	r^2 & \mbox{for $r>1/2$}\\
+	-r^2+2r & \mbox{for $r<1/2$}
+	\end{array}
+\right.
+\end{equation}
+If sharing works, then $r=1/2$ should be a stable fixed point of this mapping.
+Notice, however, that the mapping is actually discontinuous at $r=1/2$.
+If we start with almost the same number of 0's as 1's, with slightly more 1's,
+then in a single generation the ratio would jump to 3:1 in favor of the 0's.
+The method of sharing overcompensates and overshoots the equilibrium.
+
+The system has two unstable fixed points of order 1 at 0 and 1, and two unstable
+fixed points of order 2 at $\frac{3-5^{1/2}}{2}$ and $\frac{5^{1/2}-1}{2}$.
+In fact, since the slope of the mapping is always greater than 1, there are
+no stable fixed points anywhere and thus the trajectory of the system is
+always aperiodic.  We verified numerically that the system is in fact chaotic
+with a Lyapunov exponent of about $0.21$.
+
+If we think of the system in terms of control theory, then what we are trying
+to do is to control a system that would, if left by itself, drift away
+from the desired equilibrium.  In this case, our controlling force is too
+strong, and the 1-generation time lag between the measurement of the system
+and the application of the control causes the controlled system to overshoot
+the equilibrium, causing feedback and chaos.  We will use this point of view
+to correct the situation later in this paper.
+
+Actually, the fact that the system is chaotic does not really tell us that
+sharing does not work.  In order to show that sharing fails we must estimate
+the rate of loss of genetic diversity, and to do this, we will use a more
+involved model.  Instead of thinking of two sub-populations, we will consider
+a system with many sub-populations and assume that what happens in one
+sub-population does not directly affect what happens in another population.
+This model is similar to the mean-field theory that is often used to describe
+the behavior of physical systems.  Let us assume we have a large population
+of size $N$ with $k_0$ sub-populations at time $t=0$.  
+Again, we will take all the fitness values to be equal for now.
+
+Let $p(k,x,t)$ be the number of individuals at
+time $t$ in the $x$-th niche, where the
+niches are sorted according to their sizes and $k=k(t)$ is the number of
+niches remaining at time $t$.  The largest niche will have
+$p(k,k,t)$ members and the smallest niche will have $p(k,1,t)$ members.  What we
+expect is that for large $k$, the system will quickly collapse onto
+a slow manifold that does not depend on the initial conditions except for
+the value of $N$ and $k_0$.
+Let us work in the rescaled population distribution:
+\begin{equation}
+F(x/k,t)=\frac{k}{N} p(k,x,t)
+\end{equation}
+What we are guessing is that as time progresses, the system loses more and
+more niches, but the rescaled population distribution remains unchanged.
+If such a quasi-steady-state solution exists, it is given by:
+\begin{equation}
+F^*(y)=\lim_{t \rightarrow \infty} F(y,t)
+\end{equation}
+So if our quasi-steady-state assumption holds, then
+when we have a large number of niches ($k \gg 1$)
+and evolution has taken place for a while ($t \gg 1$), 
+$p(k,x,t)$ follows a simple scaling law:
+\begin{equation}
+p(k,x,t) \approx \frac{N}{k} F^*(x/k)
+\end{equation}
+We verified this scaling law numerically.  It turns out that it is possible
+to solve for this quasi-steady-state solution, $F^*$ analytically.
+The key is to postulate the existance of a solution $F^*(y)$
+that is symmetric about $y=1/2$ after the tournament reproduction phase; that is, the
+most endangered niches remain highly endangered, the most populated
+niches become endangered, and the niches in between the extremes
+remain about the same.  Numerical studies pointed out this symmetry.
+Using these assumptions, we can write the time evolution of the system
+as follows:
+
+Since all the fitnesses are equal, the outcome of the tournaments depends
+only on how many individuals are in the niches.  Let $F_t$ be the
+rescaled population distribution after the tournament phase.  Since
+the niches are ranked according to their sizes, we can take the expectation:
+\begin{equation}
+F_t(x,t)=2\int_x^1{dy\,F(x,t) F(y,t)}
+\end{equation}
+
+After the tournament phase, some of the niches that were heavily
+populated are no longer heavily populated, and some of the niches that
+were endangered are no longer endangered.  This means that we must resort
+the niches according to their new sizes.  Ordinarily, this would be
+extremely difficult to do analytically, but
+because the solution is symmetric by assumption, the sorting phase is
+given by:
+\begin{equation}
+F_{s}(x,t)=F_t(x/2,t)
+\end{equation}
+
+Now we just renormalize the probability distribution so that the integral
+is unity:
+\begin{equation}
+F(x,t+1)=C F_s(x,t)
+\end{equation}
+
+We can write the time evolution of the system as an operator equation:
+\begin{equation}
+F(x,t+1)=\Psi[F(x,t)]
+\end{equation}
+where the operator $\Psi$ is given by:
+\begin{equation}
+\Psi[w(x)]=\Phi[w(x)]/\int_0^1{dx\, \Phi[w(x)]}
+\end{equation}
+\begin{equation}
+\Phi[w(x)]=w(x/2)\int_{x/2}^1{dy\,w(y)}
+\end{equation}
+For the quasi-steady-state solution, we must solve:
+\begin{equation}
+F^*(x)=\Psi[F^*(x)]
+\end{equation}
+These equations are straightforward to solve, yielding the quasi-steady-state
+solution:
+\begin{equation}
+F^*(x)=\frac{\pi}{2}\sin(\frac{\pi x}{2})
+\end{equation}
+It is straightforward to verify that after the tournament phase, this
+solution is symmetric about $x=1/2$, and so we have a self-consistent
+solution.  The fact that numerical experiments agree with this analysis
+indicates that this is indeed a stable solution.
+
+\begin{figure}
+\epsffile{predpop.eps}
+\caption{Continuum and Mean Field Comparisons}
+\end{figure}
+
+\begin{figure}
+\epsffile{empvscon.eps}
+\caption{Continuum and Empirical Comparisons}
+\end{figure}
+
+Now that we have the distribution of the population, it is straightforward
+to compute the probability that a certain sub-population will lose every
+tournament that it enters, in the mean-field approximation.  This will
+tell us how the number of niches, $k$, depends on time.
+The rate of loss is
+\begin{equation}
+\frac{\partial k}{\partial t}= -
+\int_0^k{dx\,(\int_0^{x/k}\frac{\pi}{2}\sin(\frac{\pi}{2}y)dy)^{
+	\frac{\pi N}{2 k} 2 \sin(\frac{\pi x}{2 k}}}
+\end{equation}
+The factor of two in the exponent comes because each individual enters
+twice in tournaments.
+
+A little massaging gives:
+\begin{equation}
+\frac{\partial k}{\partial t}= -
+k \int_0^1{dx\,(1-\cos(\frac{\pi x}{2}))^{\frac{\pi N}{k} \sin(\frac{\pi x}{2})}}
+\end{equation}
+or:
+\begin{equation}
+\frac{\partial k}{\partial t}=-k G(N/k)
+\end{equation}
+where $G$ is determined by the previous equation.
+It can be shown that only the values of the integrand near the endpoint at $x=1$
+matters in the integral when $N/k$ is large.  Doing the asymptotic
+expansion yields:
+
+\begin{equation}
+\frac{\partial k}{\partial t}=-\frac{2}{\pi^2}\frac{k^2}{N}
+\end{equation}
+
+Using the initial condition $k(0)=k_0$ we get:
+\begin{equation}
+k=\frac{1}{\frac{1}{k_0}+\frac{2t}{\pi^2 N}}
+\end{equation}
+
+The following are two numerical studies to check this result.  We used
+a fixed number of individuals per niche, varied the number of niches in
+the initial population, and asked how many niches survive fifty generations.
+\begin{figure}
+\epsffile{survniche.eps}
+\caption{Number of niches that survive 50 generations vs. initial number of niches}
+\end{figure}
+We also took a single run and asked how many niches survived as a function
+of time.
+\begin{figure}
+\epsffile{survnic2.eps}
+\end{figure}
+
+A simple rule of thumb for computing the required population size for 
+supporting $k_0$ niches is to set $\frac{\partial k}{\partial t} \ll 1$
+at $t=0$, which gives:
+\begin{equation}
+N \gg k_0^2
+\end{equation}
+The number of niches we can support for a fixed number of generations
+scales as the square root of the population size.  Thus, if we want
+to support twice as many niches, we need four times as many people in
+the population.
+
+\section{Boltzman Tournament Selection}
+To analyze Boltzman tournament selection, we will again assume that
+all the individuals have the same fitness.  This corresponds to the
+high-temperature limit.  The true behavior of the system will be somewhat
+worse than our prediction, depending on the temperature used in the
+algorithm; the finite temperature and slight differences in fitness
+will cause a bias in the tournaments that will kill off the worst niches
+faster than we predicted.  However, our estimate should yield an estimate
+of the best that we can expect.  What we will find is the opposite of
+what we found before.  In the sharing method, the problem was that the
+controlling force was so strong that it overshot the equilibrium.  In
+Boltzman tournament selection, there is no controlling force and the
+system will drift away from the equilibrium in a manner similar to
+a random walk.   Again, we will assume that the actions of a particular
+niche will not affect the actions of the other niches directly.
+
+Rather than concentrate on the entire population as we did before, we
+will concentrate on a single niche.  We will assume that at $t=0$,
+all niches have the same number of individuals.  Now 
+we can use generating functions to do the analysis.
+Let $l$ represent the state with a single individual; $l^2$ represents
+the state with two individuals; $\frac{1}{2}(1+l)$ represents the
+state which has fifty percent probability of having no individuals, and
+fifty precent probability of having one individual.  Using this notation,
+we can write the time evolution of the niche in the mean-field approximation.
+At $t=0$, the niche has $n$ individuals, and so the initial state is
+represented by the function $l^n$.  Each successive generation, the
+individuals in the niche can win both tournaments, win one tournament,
+or lose both tournaments, with probabilities $1/4$, $1/2$, and $1/4$,
+respectively.  We represent this by substituting $l$ by 
+$\frac{1}{4}l^2+\frac{1}{2}l+\frac{1}{4}=(\frac{l+1}{2})^2$ each generation.
+The result is an iterative equation:
+\begin{eqnarray}
+g(l,0)&=&l^n \\
+g(l,t)&=&g((\frac{l+1}{2})^2,t-1)
+\end{eqnarray}
+Note that $g(0,t)$ gives the probability that the niche will have no
+individuals at time $t$.  Our estimate for the number of niches remaining
+at a given time is therefore:
+\begin{equation}
+k(t)=k_0 (1-g(0,t))
+\end{equation}
+We can get a better idea of how the system behaves by using asymptotics
+on the iterative equation $l(t+1)= (\frac{l(t)+1}{2})^2$.
+Let $\epsilon(t)=1-l(t)$.  The iterative equation becomes:
+\begin{equation}
+\epsilon(t+1)=\epsilon(t)(1-\frac{1}{4}\epsilon(t))
+\end{equation}
+For large $t$, the behavior is given by:
+\begin{equation}
+\epsilon(t)=4/t+\ldots
+\end{equation}
+Plugging this back into the definition of the generating function gives:
+\begin{equation}
+g(0,t)=1-4/t+\ldots
+\end{equation}
+And so the number of niches alive at time $t$ for large $t$ is
+\begin{equation}
+k(t)=\frac{4 k_0}{t}+\ldots
+\end{equation}
+Again, we see that the loss of niches is a severe problem.
+\begin{figure}
+\epsffile{bolztourn.eps}
+\caption{500 niches, 10 people/niche}
+\end{figure}
+
+\begin{figure}
+\epsffile{bolztourn2.eps}
+\caption{500 niches, 17 people/niche}
+\end{figure}
+
+\section{Continuous Update Tournament Selection}
+One way of repairing the sharing method to work with tournament selection
+is to refine the controlling force.  Before, we tried to create the
+new generation by looking only at how many individuals existed in that
+niche in the old generation.  What we will try to do now is to create
+the new generation by looking at how many individuals exist in the new
+generation as it is being created.  That is, when two individuals
+compete, we look in the new generation and see which one has fewer
+individuals in its niche; this individual wins the tournament.  When we
+tested this result numerically, we found that with ten individuals per
+niche, we could support 500 niches for 50 generations with no losses.
+Niches still can be lost, however.  Consider the case where there are three
+niches, A, B, and C, with only one individual in the old generation.
+Let us also assume that the shuffling was so unlucky as to cause these niches
+to compete only with each other.  Since all three niches are in identical
+predicaments, we consider only the case where A fights B in the first
+tournament and loses.  In the second tournament, if A fights C and loses
+again, it is eliminated.  Otherwise, it will be have at least one copy
+in the next generation.
+
+We can analyze the quasi-steady-state of this algorithm in the following way.
+Let us look at the
+size of the niche in the new generation during the reproduction.  We will
+assume that there are already a substantial number of individuals in
+the target population.  Under these conditions, the algorithm will have
+the same noise characteristics as another algorithm: simply take two
+individuals at random in the population and replace the more redundant
+individual with another copy of the less redundant individual.
+Let $w(x)$ be the probability of finding a niche with $N/k-x$ individuals.
+Then the rate of production of niches with $N/k-x$ individuals is
+\begin{equation}
+w(x-1)(w(x-1)+w(x)+w(x+1)+w(x+2)+\ldots)
+\end{equation}
+and the rate of destruction of niches with $N/k-x$ individuals is $w(x)$.
+The quasi-steady-state condition gives that the rate of production equals
+the rate of destruction:
+\begin{equation}
+w(x)=w(x-1)(w(x-1)+w(x)+w(x+1)+w(x+2)+\ldots)
+\end{equation}
+We will assume that $w(x)$ decreases rapidly in $x$ for large $x$ so that
+we can approximate the sum by the first term.
+\begin{equation}
+w(x) \approx w(x-1)^2
+\end{equation}
+The general solution to this equation is
+\begin{equation}
+w(x) \approx C_1 e^{-C_2 2^x}
+\end{equation}
+where $C_1$ and $C_2$ are arbitrary constants.  We see that $w(x)$ does indeed
+decreases rapidly in $x$ for large $x$ so our ansatz is self-consistant.
+From this argument, we conclude that large fluctuations from the equilibrium
+positition of $N/k$ individuals per niche are extremely unlikely; the
+probability of a fluctuation of size $x$ drops as an exponential of an
+exponential.  The rate of loss of niches is proportional to the probability
+of seeing a fluctuation of size $N/k$:
+\begin{equation}
+\frac{\partial n}{\partial t} \approx -C_1 k e^{-C_2 2^{N/k}}
+\end{equation}
+So we see that increasing the niche size by even a single individual
+represents a dramatic improvement in the ability of the algorithm to
+sustain niches. To insure that we maintain genetic diversity, we should
+set $\frac{\partial n}{\partial t} \ll 1$ and solve for $N$.  This
+gives
+\begin{equation}
+N=D k log(E log(F k))
+\end{equation}
+where $D$, $E$, and $F$ are constants.  We will assume that for any
+reasonable value of $k$, the double logarithm is of order unity.  This
+gives
+\begin{equation}
+N=D k
+\end{equation}
+Using a population size of ten times the number of niches seems to yield
+no loss of genetic diversity for any reasonable value of $k$.  Thus, the
+number of niches we can support goes up almost linearly in the population
+size.
+
+There are several ways to implement this method in a real application.
+One way would be to use Goldberg's idea of adjusting the fitness function
+with a sharing function and compute the sharing function by using the
+target population.  Another method would be to introduce a niche size parameter
+$n^*$.  With this method, we would use Goldberg's method of determining
+the number of individuals in a niche, but we would determine which individual
+wins a tournament in the following manner: if the two niches that the
+individuals belong to both have less than $n^*$ members, then the individual
+with the better fitness value wins; otherwise the more endangered
+individual wins.  The former method would evolve to a population that
+has more individuals in the niches that have higher fitness peaks, while the
+latter method would evolve to a population that would have about $n^*$
+individuals in each of the best $N/n^*$ niches.
+
+We can make a modification of this algorithm to speed it up.  Currently,
+each generation requires that we do $O(N^2)$ operations to compute the
+number of individuals in the same niche.  Actually, we do not need to
+sample the entire target population to get a good estimate of the number
+of individuals in a niche.  We only need to look at the last $A k$
+individuals in the target population, where $A\approx 5$ for a good
+sampling.  This reduces the computational complexity to $O(N k)$ per
+generation.
+
+\section{Conclusion}
+We have shown that two methods for preserving genetic diversity,
+tournament selection with sharing and Boltzman tournament selection,
+have serious limitations on the number of niches they can support.
+We have also shown that a modification of the tournment selection with
+sharing method yields good results.
+\end{document}
+
+

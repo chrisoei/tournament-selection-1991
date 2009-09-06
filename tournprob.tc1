@@ -1,0 +1,309 @@
+Problem with Tournament Selection When Used With Sharing
+--------------------------------------------------------
+6/27/91
+
+Consider a population of single-bit strings, each with equal fitness.
+Sharing makes the sub-population with the least number of members the
+most fit, after the sharing is taken into account.  Let n be the number
+of 1's in the population, which is of size N.
+
+       2                   
+      n                    
+n  = ----       for n > N/2
+ +    N                    
+
+       2                                   
+      n        (N - n) n                   
+n  = ---- + 2 -----------       for n < N/2
+ +    N            N                       
+
+n  = n       for n = N/2
+ +                      
+
+Let r = n/N
+
+      2                  
+r  = r        for r > 1/2
+ +                       
+
+        2                        
+r  = - r  + 2 r       for r < 1/2
+ +                               
+
+r  = 1/2       for r = 1/2
+ +                        
+
+
+In[1]:= NestList[If[#>1/2,#^2,-#^2+2#]&,.501,20]
+
+Out[1]= {0.501, 0.251001, 0.439, 0.68528, 0.469608, 0.718684, 0.516507, 
+ 
+>    0.26678, 0.462388, 0.710973, 0.505483, 0.255513, 0.44574, 0.692795, 
+ 
+>    0.479965, 0.729564, 0.532264, 0.283305, 0.486348, 0.736161, 0.541933}
+
+Note the variation!  The selection pressure for tournament selection is so
+great that it overshoots the median when sharing attempts to adjust the
+population.  The noise from this overshoot looks large enough to destroy
+a subpopulation if we had more than two populations.
+
+To illustrate this idea, let us consider a population with k sub-populations,
+with k large.  At generation zero, let all the sub-populations have equal
+fitness, and almost equal sizes.  Since k is large, at generation one,
+the smallest sub-population will have won almost every tournament and thus
+doubling in size.  Also, the biggest sub-population at generation zero will
+lose almost every tournament and might vanish.  More accurately,
+
+
+                   1                 
+n       (t = 1) = --- n       (t = 0)
+ biggest           k   biggest       
+
+This number had better be larger than one!
+
+From this, we get a rule of thumb: the maximum number of sub-populations
+that can be supported is of the order of the niche size.  If we try to
+support more, the overshoot noise will destroy subpopulations.
+
+7/3/91
+------
+While talking with Chang on Monday, I figured out the upper and lower bounds on
+the rate of subpopulation loss.  Let N be the population size and let k be the
+number of subpopulations.  If we have an even distribution, then the rate of
+loss is one over the probability that all of the members in a new generation
+miss a particular sub-population, times the number of sub-populations:
+
+                 1       
+tau      = --------------
+   upper               N 
+              /     1 \  
+            k |1 - ---|  
+              \     k /  
+
+If we have an almost even distribution, then the subpopulation most likely to
+disappear is the one with the most members.  This sub-population will survive
+only when it competes with itself, so:
+
+                 1       
+tau      = --------------
+   lower             N/k 
+            /     1 \    
+            |1 - ---|    
+            \     k /    
+
+7/9/91
+------
+It is possible to use the limit of large number of niches to change the
+iterative equation into an integral equation, and then use scaling to determine
+the result for finite number of niches.  The renormalized population function
+fits the mean-field results for 100 niches after 1000 generations very well.
+The graph is saved in the file predpop.ps
+(* Gives the renormalized population vs. niche ranking function F:
+
+pop(NumOfNiches,Niche)=F(Niche/NumOfNiches)/NumOfNiches
+*)
+
+op[ww_] := op1[ww]/Integrate[op1[ww], {x, 0, 1}]
+
+op1[ww_] := op1[ww] = (ww /. x -> x/2)*Integrate[ww /. x -> y, {y, x/2, 1}]
+
+(* start with 3/2 (1-(1-x^2)) as a seed.  apply op several times to get
+
+
+F(x)=
+
+In[95]:= Nest[Chop[ExpandAll[op[#]]]&,%,20]
+
+                             3             5               7
+Out[95]= 2.4674 x - 1.01468 x  + 0.125181 x  - 0.00735408 x  + 
+ 
+                 9             -6  11             -8  13             -9  15
+>    0.00025202 x  - 5.65305 10   x   + 8.94124 10   x   - 1.05055 10   x
+
+*)
+
+The main trick for deriving this result is to discover that when the tournament
+and niching operators finish with the above curve, the result is symmetric
+about x = 1/2.  Thus, the sorting portion is a simple rescaling:
+
+tournament reproduction phase:
+            1                
+            /                
+            |                
+Psi (x) = 2 |dy Psi(x) Psi(y)
+   +        |                
+            /                
+            x                
+
+sorting phase
+Psi  (x) = Psi (x/2)
+   ++         +     
+
+renormalization of probability
+Psi(x) = C Psi (x)
+              +   
+
+1             
+/             
+|             
+|Psi(x) dx = 1
+|             
+/             
+0             
+
+From this analysis, we find that the poor slowly become richer, but the rich
+suddenly become poor.  The middle class remains the same.
+
+Also, it appears that the noise drops as the cube of the number of niches.
+Goldberg also mentioned that we might be able to use finite sampling to get
+a local sharing mechanism!
+
+7/10/91
+-------
+The renormalized function has a closed form:
+
+        Pi     / Pi x \
+F(x) = ---- sin|------|
+        2      \  2   /
+
+
+7/11/91
+-------
+
+The rate of loss (for population N with n subpopulations) is
+
+                             Pi N     / Pi x \  
+                            ------ sin|------| 2
+                             2 n      \ 2 n  /  
+n   /x/n                   \                    
+/   | /                    |                    
+|   | |  Pi     / Pi   \   |                    
+|dx | | ---- sin|---- y| dy|                    
+|   | |  2      \ 2    /   |                    
+/   | /                    |                    
+0   \ 0                    /                    
+
+                                   N     / Pi x \
+          1                    Pi --- sin|------|
+          /                        n     \  2   /
+          |   /       / Pi x \\                  
+      = n |dx |1 - cos|------||                  
+          |   \       \  2   //                  
+          /                                      
+          0                                      
+
+      = n G(N/n)
+
+The factor of two in the exponent comes because each individual enters two
+tournaments.
+
+It turns out that only the values of the integrand near the endpoint at x = 1
+matters in the integral when N/n is large.
+
+                 2 
+ dn        2    n  
+---- = - ----- ----
+ dt         2   N  
+          Pi       
+
+           1        
+n = ----------------
+      1       2 t   
+     ---- + ------- 
+      n        2    
+       0     Pi  N  
+
+The fact that this prediction isn't true for the numerical studies we did
+does not bother me too much because in the numerical studies we started with
+the population being evenly distributed.  It should take a while to bring the
+population up to equilibrium; the time constant for this is proportional to the
+number of individuals per niche, I think.
+
+Then again, the problem might be that I'm using tournament selection without
+replacement.  Thus, if one niche is unlucky in that it competes with its
+
+betters, then another niche is less likely to disappear because all the good
+players have already played.  In other words, the system has correlations that
+I have not taken into account.
+
+7/29/91
+-------
+For Boltzmann tournament selection:
+
+Consider a single niche with population p with many other niches.
+The time it takes to vanish is
+
+        2 p                       
+        ---  -2 p /2 p\           
+tau  =  \   2     |   | (tau  + 1)
+   p    /         \ k /     k     
+        ---                       
+       k = 0                      
+
+tau  = 0
+   0    
+
+tau  = C p
+   p      
+
+                          2 
+ dn         n            n  
+---- = - -------- = - C ----
+ dt       tau            N  
+             N/n            
+
+8/4/91
+------
+Bad news about Boltzman tournament selection.  Let's use the generating
+function:
+
+          // l + 1 \2      \
+g(l,t) = g||-------| ,t - 1|
+          \\   2   /       /
+
+          n
+g(l,0) = l 
+
+                                  2                            
+                     1     l     l                             
+For n = 1, g(l,1) = --- + --- + ---- means that there are three
+                     4     2     4                             
+possibilities: no live members with probability 1/4, one live member with
+probability 1/2, and two live members with probability 1/4.  Note that
+
+g(0,t) = probability that all are dead at time t
+
+We can compute asymptotics easily: l = 1 is a fixed point.
+
+eps = 1 - l
+
+
+eps      = eps  (1 - eps /4)
+   k + 1      k         k   
+
+eps  = 4/k + ...
+   k            
+
+For n = 1,
+
+g(0,t) = 1 - 4/t + ...
+
+
+Note that the expected life is
+
+      Infinity                                  
+        ---                                     
+tau =   \     t (g(0,t) - g(0,t - 1)) = Infinity
+        /                                       
+        ---                                     
+       t = 1                                    
+
+The divergence is logarithmic.
+
+It turns out that
+
+N (1 - g(0,t))
+
+is a great predictor of the number of niches remaining.
+
+

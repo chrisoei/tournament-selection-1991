@@ -1,0 +1,38 @@
+This is CTeX, NeXT Version 3.1a (format=lplain 91.6.10)  9 SEP 1991 23:21
+**niche
+(niche.tex
+LaTeX Version 2.09 <7 Dec 1989>
+(/usr/lib/tex/inputs/article.sty
+Document Style `article' <16 Mar 88>.
+(/usr/lib/tex/inputs/art12.sty)
+\c@part=\count78
+\c@section=\count79
+\c@subsection=\count80
+\c@subsubsection=\count81
+\c@paragraph=\count82
+\c@subparagraph=\count83
+\c@figure=\count84
+\c@table=\count85
+) (niche.aux) (/usr/lib/tex/inputs/epsf.tex
+\epsffilein=\read0
+\epsfxsize=\dimen99
+\epsfysize=\dimen100
+\epsftsize=\dimen101
+\epsfrsize=\dimen102
+\epsftmp=\dimen103
+\pspoints=\dimen104
+)
+[1
+
+] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+(niche.aux) ) 
+Here is how much of TeX's memory you used:
+ 204 strings out of 4464
+ 1926 string characters out of 63276
+ 32932 words of memory out of 262141
+ 2141 multiletter control sequences out of 9500
+ 18996 words of font info for 72 fonts, out of 72000 for 255
+ 14 hyphenation exceptions out of 607
+ 14i,8n,15p,205b,221s stack positions out of 300i,40n,60p,3000b,2000s
+
+Output written on niche.dvi (16 pages, 29864 bytes).

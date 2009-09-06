@@ -1,0 +1,1417 @@
+(*^
+
+::[paletteColors = 128; showRuler; automaticGrouping; currentKernel; 
+	fontset = title, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeTitle, center, M7, bold, L1, e8,  24, "New York";
+	fontset = subtitle, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeTitle, center, M7, bold, L1, e6,  18, "New York";
+	fontset = subsubtitle, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeTitle, center, M7, italic, L1, e6,  14, "New York";
+	fontset = section, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeSection, grayBox, M22, bold, L1, a20,  18, "New York";
+	fontset = subsection, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeSection, blackBox, M19, bold, L1, a15,  14, "New York";
+	fontset = subsubsection, inactive, nohscroll, noKeepOnOnePage, preserveAspect, groupLikeSection, whiteBox, M18, bold, L1, a12,  12, "New York";
+	fontset = text, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = smalltext, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  10, "New York";
+	fontset = input, nowordwrap, preserveAspect, groupLikeInput, M42, N23, bold, L1,  12, "Courier";
+	fontset = output, output, inactive, nowordwrap, preserveAspect, groupLikeOutput, M42, N23, L-5,  12, "Courier";
+	fontset = message, inactive, nowordwrap, preserveAspect, groupLikeOutput, M42, N23, L1,  12, "Courier";
+	fontset = print, inactive, nowordwrap, preserveAspect, groupLikeOutput, M42, N23, L1,  12, "Courier";
+	fontset = info, inactive, nowordwrap, preserveAspect, groupLikeOutput, M42, N23, L1,  12, "Courier";
+	fontset = postscript, PostScript, formatAsPostScript, output, inactive, nowordwrap, preserveAspect, groupLikeGraphics, M7, l34, w282, h287, L1,  12, "Courier";
+	fontset = name, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, italic, L1,  10, "Geneva";
+	fontset = header, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = Left Header, nohscroll, cellOutline,  12;
+	fontset = footer, inactive, nohscroll, noKeepOnOnePage, preserveAspect, center, M7, L1,  12;
+	fontset = Left Footer, cellOutline, blackBox,  12;
+	fontset = help, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  10, "Geneva";
+	fontset = clipboard, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = completions, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12, "Courier";
+	fontset = special1, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = special2, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = special3, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = special4, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;
+	fontset = special5, inactive, nohscroll, noKeepOnOnePage, preserveAspect, M7, L1,  12;]
+:[font = input; preserveAspect; ]
+
+NestList[If[#>1/2,#^2,-#^2+2#]&,.501,1000];
+;[s]
+1:0,0;44,-1;
+1:1,10,8,Courier,1,12,0,0,0;
+:[font = input; preserveAspect; startGroup; ]
+ListPlot[%]
+;[s]
+1:0,0;11,-1;
+1:1,10,8,Courier,1,12,0,0,0;
+:[font = postscript; PostScript; formatAsPostScript; output; inactive; preserveAspect; pictureLeft = 34; pictureWidth = 282; pictureHeight = 174; ]
+%!
+%%Creator: Mathematica
+%%AspectRatio: 0.61803 
+MathPictureStart
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.02381 0.000951 -0.28 1.177793 [
+[(200)] 0.2141 0.07334 0 2 Msboxa
+[(400)] 0.40438 0.07334 0 2 Msboxa
+[(600)] 0.59467 0.07334 0 2 Msboxa
+[(800)] 0.78495 0.07334 0 2 Msboxa
+[(1000)] 0.97524 0.07334 0 2 Msboxa
+[(0.4)] 0.01131 0.19112 1 0 Msboxa
+[(0.5)] 0.01131 0.3089 1 0 Msboxa
+[(0.6)] 0.01131 0.42668 1 0 Msboxa
+[(0.7)] 0.01131 0.54445 1 0 Msboxa
+[ -0.001 -0.001 0 0 ]
+[ 1.001 0.61903 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+%%Object: Graphics
+[ ] 0 setdash
+0 setgray
+gsave
+gsave
+0.002 setlinewidth
+0.2141 0.07334 moveto
+0.2141 0.07959 lineto
+stroke
+grestore
+[(200)] 0.2141 0.07334 0 2 Mshowa
+gsave
+0.002 setlinewidth
+0.40438 0.07334 moveto
+0.40438 0.07959 lineto
+stroke
+grestore
+[(400)] 0.40438 0.07334 0 2 Mshowa
+gsave
+0.002 setlinewidth
+0.59467 0.07334 moveto
+0.59467 0.07959 lineto
+stroke
+grestore
+[(600)] 0.59467 0.07334 0 2 Mshowa
+gsave
+0.002 setlinewidth
+0.78495 0.07334 moveto
+0.78495 0.07959 lineto
+stroke
+grestore
+[(800)] 0.78495 0.07334 0 2 Mshowa
+gsave
+0.002 setlinewidth
+0.97524 0.07334 moveto
+0.97524 0.07959 lineto
+stroke
+grestore
+[(1000)] 0.97524 0.07334 0 2 Mshowa
+gsave
+0.001 setlinewidth
+0.06187 0.07334 moveto
+0.06187 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.09992 0.07334 moveto
+0.09992 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.13798 0.07334 moveto
+0.13798 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.17604 0.07334 moveto
+0.17604 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.25215 0.07334 moveto
+0.25215 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.29021 0.07334 moveto
+0.29021 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.32827 0.07334 moveto
+0.32827 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.36632 0.07334 moveto
+0.36632 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.44244 0.07334 moveto
+0.44244 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.4805 0.07334 moveto
+0.4805 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.51855 0.07334 moveto
+0.51855 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.55661 0.07334 moveto
+0.55661 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.63272 0.07334 moveto
+0.63272 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.67078 0.07334 moveto
+0.67078 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.70884 0.07334 moveto
+0.70884 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.7469 0.07334 moveto
+0.7469 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.82301 0.07334 moveto
+0.82301 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.86107 0.07334 moveto
+0.86107 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.89912 0.07334 moveto
+0.89912 0.07709 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.93718 0.07334 moveto
+0.93718 0.07709 lineto
+stroke
+grestore
+gsave
+0.002 setlinewidth
+0 0.07334 moveto
+1 0.07334 lineto
+stroke
+grestore
+gsave
+0.002 setlinewidth
+0.02381 0.19112 moveto
+0.03006 0.19112 lineto
+stroke
+grestore
+[(0.4)] 0.01131 0.19112 1 0 Mshowa
+gsave
+0.002 setlinewidth
+0.02381 0.3089 moveto
+0.03006 0.3089 lineto
+stroke
+grestore
+[(0.5)] 0.01131 0.3089 1 0 Mshowa
+gsave
+0.002 setlinewidth
+0.02381 0.42668 moveto
+0.03006 0.42668 lineto
+stroke
+grestore
+[(0.6)] 0.01131 0.42668 1 0 Mshowa
+gsave
+0.002 setlinewidth
+0.02381 0.54445 moveto
+0.03006 0.54445 lineto
+stroke
+grestore
+[(0.7)] 0.01131 0.54445 1 0 Mshowa
+gsave
+0.001 setlinewidth
+0.02381 0.09689 moveto
+0.02756 0.09689 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.12045 moveto
+0.02756 0.12045 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.14401 moveto
+0.02756 0.14401 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.16756 moveto
+0.02756 0.16756 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.21467 moveto
+0.02756 0.21467 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.23823 moveto
+0.02756 0.23823 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.26178 moveto
+0.02756 0.26178 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.28534 moveto
+0.02756 0.28534 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.33245 moveto
+0.02756 0.33245 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.35601 moveto
+0.02756 0.35601 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.37956 moveto
+0.02756 0.37956 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.40312 moveto
+0.02756 0.40312 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.45023 moveto
+0.02756 0.45023 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.47379 moveto
+0.02756 0.47379 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.49734 moveto
+0.02756 0.49734 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.5209 moveto
+0.02756 0.5209 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.04978 moveto
+0.02756 0.04978 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.02623 moveto
+0.02756 0.02623 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.00267 moveto
+0.02756 0.00267 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.56801 moveto
+0.02756 0.56801 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.59157 moveto
+0.02756 0.59157 lineto
+stroke
+grestore
+gsave
+0.001 setlinewidth
+0.02381 0.61512 moveto
+0.02756 0.61512 lineto
+stroke
+grestore
+gsave
+0.002 setlinewidth
+0.02381 0 moveto
+0.02381 0.61803 lineto
+stroke
+grestore
+grestore
+0 0 moveto
+1 0 lineto
+1 0.61803 lineto
+0 0.61803 lineto
+closepath
+clip
+newpath
+gsave
+0.008 setlinewidth
+0.02476 0.31007 Mdot
+0.02571 0.01563 Mdot
+0.02666 0.23705 Mdot
+0.02762 0.52712 Mdot
+0.02857 0.2731 Mdot
+0.02952 0.56646 Mdot
+0.03047 0.32834 Mdot
+0.03142 0.03421 Mdot
+0.03237 0.2646 Mdot
+0.03332 0.55738 Mdot
+0.03428 0.31535 Mdot
+0.03523 0.02094 Mdot
+0.03618 0.24499 Mdot
+0.03713 0.53597 Mdot
+0.03808 0.2853 Mdot
+0.03903 0.57928 Mdot
+0.03998 0.3469 Mdot
+0.04094 0.05367 Mdot
+0.04189 0.29282 Mdot
+0.04284 0.58705 Mdot
+0.04379 0.35829 Mdot
+0.04474 0.06591 Mdot
+0.04569 0.31023 Mdot
+0.04664 0.01578 Mdot
+0.0476 0.23728 Mdot
+0.04855 0.52737 Mdot
+0.0495 0.27345 Mdot
+0.05045 0.56683 Mdot
+0.0514 0.32887 Mdot
+0.05235 0.03476 Mdot
+0.0533 0.26541 Mdot
+0.05426 0.55825 Mdot
+0.05521 0.31659 Mdot
+0.05616 0.02219 Mdot
+0.05711 0.24685 Mdot
+0.05806 0.53803 Mdot
+0.05901 0.28816 Mdot
+0.05996 0.58224 Mdot
+0.06092 0.35123 Mdot
+0.06187 0.0583 Mdot
+0.06282 0.29943 Mdot
+0.06377 0.5938 Mdot
+0.06472 0.36827 Mdot
+0.06567 0.07682 Mdot
+0.06662 0.32554 Mdot
+0.06758 0.03133 Mdot
+0.06853 0.26036 Mdot
+0.06948 0.55281 Mdot
+0.07043 0.30887 Mdot
+0.07138 0.60332 Mdot
+0.07233 0.38247 Mdot
+0.07328 0.09262 Mdot
+0.07424 0.34735 Mdot
+0.07519 0.05416 Mdot
+0.07614 0.29351 Mdot
+0.07709 0.58776 Mdot
+0.07804 0.35933 Mdot
+0.07899 0.06705 Mdot
+0.07994 0.31183 Mdot
+0.0809 0.01739 Mdot
+0.08185 0.23969 Mdot
+0.0828 0.53007 Mdot
+0.08375 0.27716 Mdot
+0.0847 0.57075 Mdot
+0.08565 0.33452 Mdot
+0.0866 0.04063 Mdot
+0.08756 0.27397 Mdot
+0.08851 0.56739 Mdot
+0.08946 0.32967 Mdot
+0.09041 0.03559 Mdot
+0.09136 0.26661 Mdot
+0.09231 0.55954 Mdot
+0.09326 0.31843 Mdot
+0.09422 0.02406 Mdot
+0.09517 0.24963 Mdot
+0.09612 0.54109 Mdot
+0.09707 0.29242 Mdot
+0.09802 0.58664 Mdot
+0.09897 0.35769 Mdot
+0.09992 0.06526 Mdot
+0.10088 0.30931 Mdot
+0.10183 0.01487 Mdot
+0.10278 0.23591 Mdot
+0.10373 0.52584 Mdot
+0.10468 0.27135 Mdot
+0.10563 0.5646 Mdot
+0.10658 0.32567 Mdot
+0.10754 0.03146 Mdot
+0.10849 0.26055 Mdot
+0.10944 0.55301 Mdot
+0.11039 0.30916 Mdot
+0.11134 0.01472 Mdot
+0.11229 0.23568 Mdot
+0.11324 0.52558 Mdot
+0.1142 0.271 Mdot
+0.11515 0.56423 Mdot
+0.1161 0.32513 Mdot
+0.11705 0.03091 Mdot
+0.118 0.25974 Mdot
+0.11895 0.55214 Mdot
+0.1199 0.30793 Mdot
+0.12086 0.60238 Mdot
+0.12181 0.38106 Mdot
+0.12276 0.09103 Mdot
+0.12371 0.34517 Mdot
+0.12466 0.05184 Mdot
+0.12561 0.29019 Mdot
+0.12656 0.58434 Mdot
+0.12752 0.35431 Mdot
+0.12847 0.06161 Mdot
+0.12942 0.30414 Mdot
+0.13037 0.59857 Mdot
+0.13132 0.37537 Mdot
+0.13227 0.08467 Mdot
+0.13322 0.33643 Mdot
+0.13418 0.04263 Mdot
+0.13513 0.27688 Mdot
+0.13608 0.57046 Mdot
+0.13703 0.3341 Mdot
+0.13798 0.04019 Mdot
+0.13893 0.27334 Mdot
+0.13988 0.56671 Mdot
+0.14084 0.3287 Mdot
+0.14179 0.03458 Mdot
+0.14274 0.26514 Mdot
+0.14369 0.55797 Mdot
+0.14464 0.31619 Mdot
+0.14559 0.02179 Mdot
+0.14654 0.24624 Mdot
+0.1475 0.53736 Mdot
+0.14845 0.28723 Mdot
+0.1494 0.58128 Mdot
+0.15035 0.34982 Mdot
+0.1513 0.05679 Mdot
+0.15225 0.29728 Mdot
+0.1532 0.59161 Mdot
+0.15416 0.36503 Mdot
+0.15511 0.07326 Mdot
+0.15606 0.32056 Mdot
+0.15701 0.02623 Mdot
+0.15796 0.25284 Mdot
+0.15891 0.54462 Mdot
+0.15986 0.29735 Mdot
+0.16082 0.59168 Mdot
+0.16177 0.36513 Mdot
+0.16272 0.07337 Mdot
+0.16367 0.32072 Mdot
+0.16462 0.02639 Mdot
+0.16557 0.25307 Mdot
+0.16652 0.54487 Mdot
+0.16748 0.29771 Mdot
+0.16843 0.59205 Mdot
+0.16938 0.36567 Mdot
+0.17033 0.07396 Mdot
+0.17128 0.32155 Mdot
+0.17223 0.02723 Mdot
+0.17318 0.25432 Mdot
+0.17414 0.54624 Mdot
+0.17509 0.29962 Mdot
+0.17604 0.594 Mdot
+0.17699 0.36856 Mdot
+0.17794 0.07714 Mdot
+0.17889 0.32598 Mdot
+0.17984 0.03178 Mdot
+0.1808 0.26103 Mdot
+0.18175 0.55354 Mdot
+0.1827 0.3099 Mdot
+0.18365 0.01545 Mdot
+0.1846 0.23679 Mdot
+0.18555 0.52683 Mdot
+0.1865 0.2727 Mdot
+0.18746 0.56604 Mdot
+0.18841 0.32773 Mdot
+0.18936 0.03358 Mdot
+0.19031 0.26368 Mdot
+0.19126 0.55639 Mdot
+0.19221 0.31395 Mdot
+0.19316 0.01952 Mdot
+0.19412 0.24287 Mdot
+0.19507 0.53362 Mdot
+0.19602 0.28205 Mdot
+0.19697 0.57588 Mdot
+0.19792 0.34196 Mdot
+0.19887 0.04844 Mdot
+0.19982 0.28528 Mdot
+0.20078 0.57926 Mdot
+0.20173 0.34687 Mdot
+0.20268 0.05365 Mdot
+0.20363 0.29278 Mdot
+0.20458 0.58701 Mdot
+0.20553 0.35823 Mdot
+0.20648 0.06585 Mdot
+0.20744 0.31014 Mdot
+0.20839 0.01569 Mdot
+0.20934 0.23715 Mdot
+0.21029 0.52723 Mdot
+0.21124 0.27326 Mdot
+0.21219 0.56663 Mdot
+0.21314 0.32858 Mdot
+0.2141 0.03446 Mdot
+0.21505 0.26496 Mdot
+0.216 0.55777 Mdot
+0.21695 0.3159 Mdot
+0.2179 0.0215 Mdot
+0.21885 0.24582 Mdot
+0.2198 0.53689 Mdot
+0.22076 0.28657 Mdot
+0.22171 0.5806 Mdot
+0.22266 0.34883 Mdot
+0.22361 0.05573 Mdot
+0.22456 0.29576 Mdot
+0.22551 0.59007 Mdot
+0.22646 0.36274 Mdot
+0.22742 0.07075 Mdot
+0.22837 0.31705 Mdot
+0.22932 0.02266 Mdot
+0.23027 0.24754 Mdot
+0.23122 0.5388 Mdot
+0.23217 0.28922 Mdot
+0.23312 0.58334 Mdot
+0.23408 0.35285 Mdot
+0.23503 0.06004 Mdot
+0.23598 0.3019 Mdot
+0.23693 0.59631 Mdot
+0.23788 0.372 Mdot
+0.23883 0.08093 Mdot
+0.23978 0.33126 Mdot
+0.24074 0.03724 Mdot
+0.24169 0.26903 Mdot
+0.24264 0.56212 Mdot
+0.24359 0.32212 Mdot
+0.24454 0.02782 Mdot
+0.24549 0.25519 Mdot
+0.24644 0.54719 Mdot
+0.2474 0.30095 Mdot
+0.24835 0.59535 Mdot
+0.2493 0.37057 Mdot
+0.25025 0.07935 Mdot
+0.2512 0.32906 Mdot
+0.25215 0.03495 Mdot
+0.2531 0.26569 Mdot
+0.25406 0.55855 Mdot
+0.25501 0.31702 Mdot
+0.25596 0.02263 Mdot
+0.25691 0.2475 Mdot
+0.25786 0.53874 Mdot
+0.25881 0.28915 Mdot
+0.25976 0.58327 Mdot
+0.26072 0.35274 Mdot
+0.26167 0.05992 Mdot
+0.26262 0.30174 Mdot
+0.26357 0.59614 Mdot
+0.26452 0.37175 Mdot
+0.26547 0.08065 Mdot
+0.26642 0.33087 Mdot
+0.26738 0.03683 Mdot
+0.26833 0.26844 Mdot
+0.26928 0.5615 Mdot
+0.27023 0.32122 Mdot
+0.27118 0.0269 Mdot
+0.27213 0.25383 Mdot
+0.27308 0.54571 Mdot
+0.27404 0.29887 Mdot
+0.27499 0.59324 Mdot
+0.27594 0.36743 Mdot
+0.27689 0.07589 Mdot
+0.27784 0.32425 Mdot
+0.27879 0.03 Mdot
+0.27974 0.2584 Mdot
+0.2807 0.55069 Mdot
+0.28165 0.30588 Mdot
+0.2826 0.60032 Mdot
+0.28355 0.37798 Mdot
+0.2845 0.08758 Mdot
+0.28545 0.34044 Mdot
+0.2864 0.04684 Mdot
+0.28736 0.28298 Mdot
+0.28831 0.57685 Mdot
+0.28926 0.34337 Mdot
+0.29021 0.04993 Mdot
+0.29116 0.28743 Mdot
+0.29211 0.58149 Mdot
+0.29306 0.35013 Mdot
+0.29402 0.05713 Mdot
+0.29497 0.29776 Mdot
+0.29592 0.5921 Mdot
+0.29687 0.36576 Mdot
+0.29782 0.07405 Mdot
+0.29877 0.32167 Mdot
+0.29972 0.02736 Mdot
+0.30068 0.25452 Mdot
+0.30163 0.54645 Mdot
+0.30258 0.29992 Mdot
+0.30353 0.5943 Mdot
+0.30448 0.36901 Mdot
+0.30543 0.07763 Mdot
+0.30638 0.32667 Mdot
+0.30734 0.03249 Mdot
+0.30829 0.26207 Mdot
+0.30924 0.55466 Mdot
+0.31019 0.31149 Mdot
+0.31114 0.01705 Mdot
+0.31209 0.23918 Mdot
+0.31304 0.5295 Mdot
+0.314 0.27637 Mdot
+0.31495 0.56992 Mdot
+0.3159 0.33332 Mdot
+0.31685 0.03937 Mdot
+0.3178 0.27215 Mdot
+0.31875 0.56545 Mdot
+0.3197 0.32688 Mdot
+0.32066 0.03271 Mdot
+0.32161 0.26239 Mdot
+0.32256 0.555 Mdot
+0.32351 0.31198 Mdot
+0.32446 0.01754 Mdot
+0.32541 0.23991 Mdot
+0.32636 0.53032 Mdot
+0.32732 0.2775 Mdot
+0.32827 0.57111 Mdot
+0.32922 0.33504 Mdot
+0.33017 0.04117 Mdot
+0.33112 0.27477 Mdot
+0.33207 0.56823 Mdot
+0.33302 0.33088 Mdot
+0.33398 0.03684 Mdot
+0.33493 0.26845 Mdot
+0.33588 0.56151 Mdot
+0.33683 0.32124 Mdot
+0.33778 0.02692 Mdot
+0.33873 0.25386 Mdot
+0.33968 0.54574 Mdot
+0.34064 0.29891 Mdot
+0.34159 0.59328 Mdot
+0.34254 0.36749 Mdot
+0.34349 0.07596 Mdot
+0.34444 0.32434 Mdot
+0.34539 0.03009 Mdot
+0.34634 0.25854 Mdot
+0.3473 0.55084 Mdot
+0.34825 0.30609 Mdot
+0.3492 0.60053 Mdot
+0.35015 0.37829 Mdot
+0.3511 0.08793 Mdot
+0.35205 0.34092 Mdot
+0.353 0.04735 Mdot
+0.35396 0.28371 Mdot
+0.35491 0.57762 Mdot
+0.35586 0.34449 Mdot
+0.35681 0.05111 Mdot
+0.35776 0.28914 Mdot
+0.35871 0.58326 Mdot
+0.35966 0.35272 Mdot
+0.36062 0.05991 Mdot
+0.36157 0.30172 Mdot
+0.36252 0.59612 Mdot
+0.36347 0.37172 Mdot
+0.36442 0.08062 Mdot
+0.36537 0.33082 Mdot
+0.36632 0.03678 Mdot
+0.36728 0.26836 Mdot
+0.36823 0.56141 Mdot
+0.36918 0.32111 Mdot
+0.37013 0.02678 Mdot
+0.37108 0.25366 Mdot
+0.37203 0.54552 Mdot
+0.37298 0.2986 Mdot
+0.37394 0.59296 Mdot
+0.37489 0.36703 Mdot
+0.37584 0.07545 Mdot
+0.37679 0.32362 Mdot
+0.37774 0.02936 Mdot
+0.37869 0.25746 Mdot
+0.37964 0.54967 Mdot
+0.3806 0.30444 Mdot
+0.38155 0.59887 Mdot
+0.3825 0.37581 Mdot
+0.38345 0.08517 Mdot
+0.3844 0.33711 Mdot
+0.38535 0.04334 Mdot
+0.3863 0.27792 Mdot
+0.38726 0.57155 Mdot
+0.38821 0.33567 Mdot
+0.38916 0.04183 Mdot
+0.39011 0.27573 Mdot
+0.39106 0.56924 Mdot
+0.39201 0.33234 Mdot
+0.39296 0.03836 Mdot
+0.39392 0.27066 Mdot
+0.39487 0.56387 Mdot
+0.39582 0.32462 Mdot
+0.39677 0.03038 Mdot
+0.39772 0.25897 Mdot
+0.39867 0.5513 Mdot
+0.39962 0.30675 Mdot
+0.40058 0.60119 Mdot
+0.40153 0.37928 Mdot
+0.40248 0.08904 Mdot
+0.40343 0.34245 Mdot
+0.40438 0.04896 Mdot
+0.40533 0.28604 Mdot
+0.40628 0.58004 Mdot
+0.40724 0.34802 Mdot
+0.40819 0.05487 Mdot
+0.40914 0.29453 Mdot
+0.41009 0.5888 Mdot
+0.41104 0.36087 Mdot
+0.41199 0.06872 Mdot
+0.41294 0.31419 Mdot
+0.4139 0.01976 Mdot
+0.41485 0.24323 Mdot
+0.4158 0.53402 Mdot
+0.41675 0.2826 Mdot
+0.4177 0.57646 Mdot
+0.41865 0.3428 Mdot
+0.4196 0.04933 Mdot
+0.42056 0.28657 Mdot
+0.42151 0.5806 Mdot
+0.42246 0.34883 Mdot
+0.42341 0.05573 Mdot
+0.42436 0.29576 Mdot
+0.42531 0.59007 Mdot
+0.42626 0.36274 Mdot
+0.42722 0.07075 Mdot
+0.42817 0.31705 Mdot
+0.42912 0.02266 Mdot
+0.43007 0.24754 Mdot
+0.43102 0.53879 Mdot
+0.43197 0.28922 Mdot
+0.43292 0.58334 Mdot
+0.43388 0.35284 Mdot
+0.43483 0.06003 Mdot
+0.43578 0.30189 Mdot
+0.43673 0.5963 Mdot
+0.43768 0.37198 Mdot
+0.43863 0.08091 Mdot
+0.43958 0.33123 Mdot
+0.44054 0.0372 Mdot
+0.44149 0.26898 Mdot
+0.44244 0.56207 Mdot
+0.44339 0.32205 Mdot
+0.44434 0.02775 Mdot
+0.44529 0.25508 Mdot
+0.44624 0.54707 Mdot
+0.4472 0.30079 Mdot
+0.44815 0.59518 Mdot
+0.4491 0.37032 Mdot
+0.45005 0.07907 Mdot
+0.451 0.32867 Mdot
+0.45195 0.03456 Mdot
+0.4529 0.2651 Mdot
+0.45386 0.55792 Mdot
+0.45481 0.31613 Mdot
+0.45576 0.02172 Mdot
+0.45671 0.24615 Mdot
+0.45766 0.53726 Mdot
+0.45861 0.28709 Mdot
+0.45956 0.58113 Mdot
+0.46052 0.34961 Mdot
+0.46147 0.05657 Mdot
+0.46242 0.29696 Mdot
+0.46337 0.59129 Mdot
+0.46432 0.36455 Mdot
+0.46527 0.07273 Mdot
+0.46622 0.31982 Mdot
+0.46718 0.02547 Mdot
+0.46813 0.25172 Mdot
+0.46908 0.54339 Mdot
+0.47003 0.29563 Mdot
+0.47098 0.58993 Mdot
+0.47193 0.36254 Mdot
+0.47288 0.07053 Mdot
+0.47384 0.31674 Mdot
+0.47479 0.02234 Mdot
+0.47574 0.24707 Mdot
+0.47669 0.53827 Mdot
+0.47764 0.2885 Mdot
+0.47859 0.58259 Mdot
+0.47954 0.35175 Mdot
+0.4805 0.05886 Mdot
+0.48145 0.30022 Mdot
+0.4824 0.59461 Mdot
+0.48335 0.36947 Mdot
+0.4843 0.07813 Mdot
+0.48525 0.32737 Mdot
+0.4862 0.03321 Mdot
+0.48716 0.26313 Mdot
+0.48811 0.5558 Mdot
+0.48906 0.31311 Mdot
+0.49001 0.01868 Mdot
+0.49096 0.24161 Mdot
+0.49191 0.53221 Mdot
+0.49286 0.28011 Mdot
+0.49382 0.57385 Mdot
+0.49477 0.33901 Mdot
+0.49572 0.04533 Mdot
+0.49667 0.2808 Mdot
+0.49762 0.57458 Mdot
+0.49857 0.34006 Mdot
+0.49952 0.04644 Mdot
+0.50048 0.2824 Mdot
+0.50143 0.57625 Mdot
+0.50238 0.34249 Mdot
+0.50333 0.049 Mdot
+0.50428 0.2861 Mdot
+0.50523 0.58011 Mdot
+0.50618 0.34812 Mdot
+0.50714 0.05497 Mdot
+0.50809 0.29468 Mdot
+0.50904 0.58895 Mdot
+0.50999 0.3611 Mdot
+0.51094 0.06896 Mdot
+0.51189 0.31454 Mdot
+0.51284 0.02011 Mdot
+0.5138 0.24376 Mdot
+0.51475 0.5346 Mdot
+0.5157 0.28341 Mdot
+0.51665 0.5773 Mdot
+0.5176 0.34402 Mdot
+0.51855 0.05062 Mdot
+0.5195 0.28843 Mdot
+0.52046 0.58253 Mdot
+0.52141 0.35165 Mdot
+0.52236 0.05875 Mdot
+0.52331 0.30007 Mdot
+0.52426 0.59445 Mdot
+0.52521 0.36924 Mdot
+0.52616 0.07788 Mdot
+0.52712 0.32702 Mdot
+0.52807 0.03285 Mdot
+0.52902 0.2626 Mdot
+0.52997 0.55523 Mdot
+0.53092 0.31231 Mdot
+0.53187 0.01787 Mdot
+0.53282 0.2404 Mdot
+0.53378 0.53087 Mdot
+0.53473 0.27826 Mdot
+0.53568 0.57191 Mdot
+0.53663 0.33619 Mdot
+0.53758 0.04237 Mdot
+0.53853 0.27651 Mdot
+0.53948 0.57007 Mdot
+0.54044 0.33354 Mdot
+0.54139 0.0396 Mdot
+0.54234 0.27248 Mdot
+0.54329 0.5658 Mdot
+0.54424 0.32739 Mdot
+0.54519 0.03323 Mdot
+0.54614 0.26316 Mdot
+0.5471 0.55583 Mdot
+0.54805 0.31316 Mdot
+0.549 0.01872 Mdot
+0.54995 0.24168 Mdot
+0.5509 0.53229 Mdot
+0.55185 0.28022 Mdot
+0.5528 0.57397 Mdot
+0.55376 0.33917 Mdot
+0.55471 0.0455 Mdot
+0.55566 0.28105 Mdot
+0.55661 0.57484 Mdot
+0.55756 0.34044 Mdot
+0.55851 0.04683 Mdot
+0.55946 0.28297 Mdot
+0.56042 0.57685 Mdot
+0.56137 0.34336 Mdot
+0.56232 0.04993 Mdot
+0.56327 0.28743 Mdot
+0.56422 0.58149 Mdot
+0.56517 0.35013 Mdot
+0.56612 0.05713 Mdot
+0.56708 0.29775 Mdot
+0.56803 0.5921 Mdot
+0.56898 0.36574 Mdot
+0.56993 0.07404 Mdot
+0.57088 0.32166 Mdot
+0.57183 0.02735 Mdot
+0.57278 0.25449 Mdot
+0.57374 0.54642 Mdot
+0.57469 0.29988 Mdot
+0.57564 0.59426 Mdot
+0.57659 0.36895 Mdot
+0.57754 0.07756 Mdot
+0.57849 0.32657 Mdot
+0.57944 0.03239 Mdot
+0.5804 0.26192 Mdot
+0.58135 0.5545 Mdot
+0.5823 0.31127 Mdot
+0.58325 0.01682 Mdot
+0.5842 0.23884 Mdot
+0.58515 0.52912 Mdot
+0.5861 0.27585 Mdot
+0.58706 0.56937 Mdot
+0.58801 0.33253 Mdot
+0.58896 0.03856 Mdot
+0.58991 0.27095 Mdot
+0.59086 0.56418 Mdot
+0.59181 0.32506 Mdot
+0.59276 0.03084 Mdot
+0.59372 0.25964 Mdot
+0.59467 0.55202 Mdot
+0.59562 0.30776 Mdot
+0.59657 0.60221 Mdot
+0.59752 0.38081 Mdot
+0.59847 0.09075 Mdot
+0.59942 0.3448 Mdot
+0.60038 0.05145 Mdot
+0.60133 0.28962 Mdot
+0.60228 0.58375 Mdot
+0.60323 0.35344 Mdot
+0.60418 0.06068 Mdot
+0.60513 0.30282 Mdot
+0.60608 0.59723 Mdot
+0.60704 0.37337 Mdot
+0.60799 0.08245 Mdot
+0.60894 0.33337 Mdot
+0.60989 0.03943 Mdot
+0.61084 0.27222 Mdot
+0.61179 0.56553 Mdot
+0.61274 0.327 Mdot
+0.6137 0.03283 Mdot
+0.61465 0.26257 Mdot
+0.6156 0.5552 Mdot
+0.61655 0.31226 Mdot
+0.6175 0.01782 Mdot
+0.61845 0.24033 Mdot
+0.6194 0.53079 Mdot
+0.62036 0.27814 Mdot
+0.62131 0.57179 Mdot
+0.62226 0.33601 Mdot
+0.62321 0.04219 Mdot
+0.62416 0.27625 Mdot
+0.62511 0.56979 Mdot
+0.62606 0.33313 Mdot
+0.62702 0.03918 Mdot
+0.62797 0.27186 Mdot
+0.62892 0.56515 Mdot
+0.62987 0.32645 Mdot
+0.63082 0.03226 Mdot
+0.63177 0.26174 Mdot
+0.63272 0.5543 Mdot
+0.63368 0.31098 Mdot
+0.63463 0.01654 Mdot
+0.63558 0.23841 Mdot
+0.63653 0.52864 Mdot
+0.63748 0.2752 Mdot
+0.63843 0.56868 Mdot
+0.63938 0.33153 Mdot
+0.64034 0.03752 Mdot
+0.64129 0.26944 Mdot
+0.64224 0.56257 Mdot
+0.64319 0.32275 Mdot
+0.64414 0.02847 Mdot
+0.64509 0.25615 Mdot
+0.64604 0.54823 Mdot
+0.647 0.30242 Mdot
+0.64795 0.59683 Mdot
+0.6489 0.37277 Mdot
+0.64985 0.08179 Mdot
+0.6508 0.33244 Mdot
+0.65175 0.03847 Mdot
+0.6527 0.27082 Mdot
+0.65366 0.56404 Mdot
+0.65461 0.32486 Mdot
+0.65556 0.03063 Mdot
+0.65651 0.25934 Mdot
+0.65746 0.5517 Mdot
+0.65841 0.30731 Mdot
+0.65936 0.60176 Mdot
+0.66032 0.38013 Mdot
+0.66127 0.08999 Mdot
+0.66222 0.34375 Mdot
+0.66317 0.05033 Mdot
+0.66412 0.28801 Mdot
+0.66507 0.58209 Mdot
+0.66602 0.35101 Mdot
+0.66698 0.05807 Mdot
+0.66793 0.2991 Mdot
+0.66888 0.59347 Mdot
+0.66983 0.36778 Mdot
+0.67078 0.07627 Mdot
+0.67173 0.32478 Mdot
+0.67268 0.03054 Mdot
+0.67364 0.25921 Mdot
+0.67459 0.55156 Mdot
+0.67554 0.30711 Mdot
+0.67649 0.60155 Mdot
+0.67744 0.37982 Mdot
+0.67839 0.08965 Mdot
+0.67934 0.34328 Mdot
+0.6803 0.04984 Mdot
+0.68125 0.28731 Mdot
+0.6822 0.58136 Mdot
+0.68315 0.34994 Mdot
+0.6841 0.05692 Mdot
+0.68505 0.29746 Mdot
+0.686 0.5918 Mdot
+0.68696 0.3653 Mdot
+0.68791 0.07356 Mdot
+0.68886 0.32098 Mdot
+0.68981 0.02666 Mdot
+0.69076 0.25347 Mdot
+0.69171 0.54531 Mdot
+0.69266 0.29832 Mdot
+0.69362 0.59267 Mdot
+0.69457 0.3666 Mdot
+0.69552 0.07498 Mdot
+0.69647 0.32297 Mdot
+0.69742 0.02869 Mdot
+0.69837 0.25647 Mdot
+0.69932 0.54858 Mdot
+0.70028 0.30291 Mdot
+0.70123 0.59733 Mdot
+0.70218 0.37352 Mdot
+0.70313 0.08262 Mdot
+0.70408 0.33359 Mdot
+0.70503 0.03966 Mdot
+0.70598 0.27257 Mdot
+0.70694 0.56589 Mdot
+0.70789 0.32752 Mdot
+0.70884 0.03337 Mdot
+0.70979 0.26336 Mdot
+0.71074 0.55605 Mdot
+0.71169 0.31346 Mdot
+0.71264 0.01903 Mdot
+0.7136 0.24214 Mdot
+0.71455 0.53281 Mdot
+0.7155 0.28093 Mdot
+0.71645 0.57471 Mdot
+0.7174 0.34026 Mdot
+0.71835 0.04665 Mdot
+0.7193 0.2827 Mdot
+0.72026 0.57657 Mdot
+0.72121 0.34295 Mdot
+0.72216 0.04949 Mdot
+0.72311 0.2868 Mdot
+0.72406 0.58083 Mdot
+0.72501 0.34917 Mdot
+0.72596 0.0561 Mdot
+0.72692 0.29629 Mdot
+0.72787 0.5906 Mdot
+0.72882 0.36353 Mdot
+0.72977 0.07162 Mdot
+0.73072 0.31826 Mdot
+0.73167 0.02389 Mdot
+0.73262 0.24937 Mdot
+0.73358 0.54081 Mdot
+0.73453 0.29203 Mdot
+0.73548 0.58624 Mdot
+0.73643 0.3571 Mdot
+0.73738 0.06462 Mdot
+0.73833 0.30841 Mdot
+0.73928 0.60285 Mdot
+0.74024 0.38177 Mdot
+0.74119 0.09183 Mdot
+0.74214 0.34628 Mdot
+0.74309 0.05302 Mdot
+0.74404 0.29187 Mdot
+0.74499 0.58607 Mdot
+0.74594 0.35686 Mdot
+0.7469 0.06436 Mdot
+0.74785 0.30804 Mdot
+0.7488 0.60249 Mdot
+0.74975 0.38122 Mdot
+0.7507 0.09121 Mdot
+0.75165 0.34543 Mdot
+0.7526 0.05211 Mdot
+0.75356 0.29058 Mdot
+0.75451 0.58474 Mdot
+0.75546 0.3549 Mdot
+0.75641 0.06224 Mdot
+0.75736 0.30504 Mdot
+0.75831 0.59948 Mdot
+0.75926 0.37672 Mdot
+0.76022 0.08617 Mdot
+0.76117 0.3385 Mdot
+0.76212 0.0448 Mdot
+0.76307 0.28003 Mdot
+0.76402 0.57377 Mdot
+0.76497 0.33889 Mdot
+0.76592 0.04521 Mdot
+0.76688 0.28062 Mdot
+0.76783 0.57439 Mdot
+0.76878 0.33979 Mdot
+0.76973 0.04615 Mdot
+0.77068 0.28199 Mdot
+0.77163 0.57582 Mdot
+0.77258 0.34186 Mdot
+0.77354 0.04834 Mdot
+0.77449 0.28514 Mdot
+0.77544 0.57911 Mdot
+0.77639 0.34666 Mdot
+0.77734 0.05342 Mdot
+0.77829 0.29245 Mdot
+0.77924 0.58667 Mdot
+0.7802 0.35774 Mdot
+0.78115 0.06531 Mdot
+0.7821 0.30939 Mdot
+0.78305 0.01494 Mdot
+0.784 0.23602 Mdot
+0.78495 0.52596 Mdot
+0.7859 0.27151 Mdot
+0.78686 0.56477 Mdot
+0.78781 0.32592 Mdot
+0.78876 0.03171 Mdot
+0.78971 0.26093 Mdot
+0.79066 0.55342 Mdot
+0.79161 0.30974 Mdot
+0.79256 0.0153 Mdot
+0.79352 0.23656 Mdot
+0.79447 0.52656 Mdot
+0.79542 0.27234 Mdot
+0.79637 0.56565 Mdot
+0.79732 0.32718 Mdot
+0.79827 0.03301 Mdot
+0.79922 0.26284 Mdot
+0.80018 0.55549 Mdot
+0.80113 0.31267 Mdot
+0.80208 0.01823 Mdot
+0.80303 0.24095 Mdot
+0.80398 0.53148 Mdot
+0.80493 0.27909 Mdot
+0.80588 0.57279 Mdot
+0.80684 0.33746 Mdot
+0.80779 0.04371 Mdot
+0.80874 0.27845 Mdot
+0.80969 0.57211 Mdot
+0.81064 0.33648 Mdot
+0.81159 0.04268 Mdot
+0.81254 0.27696 Mdot
+0.8135 0.57054 Mdot
+0.81445 0.33422 Mdot
+0.8154 0.04031 Mdot
+0.81635 0.27351 Mdot
+0.8173 0.5669 Mdot
+0.81825 0.32897 Mdot
+0.8192 0.03486 Mdot
+0.82016 0.26555 Mdot
+0.82111 0.5584 Mdot
+0.82206 0.31681 Mdot
+0.82301 0.02241 Mdot
+0.82396 0.24718 Mdot
+0.82491 0.53839 Mdot
+0.82586 0.28867 Mdot
+0.82682 0.58277 Mdot
+0.82777 0.352 Mdot
+0.82872 0.05913 Mdot
+0.82967 0.30061 Mdot
+0.83062 0.595 Mdot
+0.83157 0.37005 Mdot
+0.83252 0.07878 Mdot
+0.83348 0.32827 Mdot
+0.83443 0.03414 Mdot
+0.83538 0.26449 Mdot
+0.83633 0.55726 Mdot
+0.83728 0.31519 Mdot
+0.83823 0.02077 Mdot
+0.83918 0.24474 Mdot
+0.84014 0.53569 Mdot
+0.84109 0.28491 Mdot
+0.84204 0.57887 Mdot
+0.84299 0.3463 Mdot
+0.84394 0.05304 Mdot
+0.84489 0.29191 Mdot
+0.84584 0.58612 Mdot
+0.8468 0.35692 Mdot
+0.84775 0.06443 Mdot
+0.8487 0.30814 Mdot
+0.84965 0.60258 Mdot
+0.8506 0.38137 Mdot
+0.85155 0.09138 Mdot
+0.8525 0.34565 Mdot
+0.85346 0.05235 Mdot
+0.85441 0.29092 Mdot
+0.85536 0.58509 Mdot
+0.85631 0.35542 Mdot
+0.85726 0.06281 Mdot
+0.85821 0.30583 Mdot
+0.85916 0.60027 Mdot
+0.86012 0.37791 Mdot
+0.86107 0.08751 Mdot
+0.86202 0.34034 Mdot
+0.86297 0.04673 Mdot
+0.86392 0.28283 Mdot
+0.86487 0.5767 Mdot
+0.86582 0.34314 Mdot
+0.86678 0.04969 Mdot
+0.86773 0.28709 Mdot
+0.86868 0.58113 Mdot
+0.86963 0.34961 Mdot
+0.87058 0.05657 Mdot
+0.87153 0.29696 Mdot
+0.87248 0.59129 Mdot
+0.87344 0.36455 Mdot
+0.87439 0.07273 Mdot
+0.87534 0.31982 Mdot
+0.87629 0.02547 Mdot
+0.87724 0.25172 Mdot
+0.87819 0.54339 Mdot
+0.87914 0.29563 Mdot
+0.8801 0.58992 Mdot
+0.88105 0.36253 Mdot
+0.882 0.07053 Mdot
+0.88295 0.31673 Mdot
+0.8839 0.02234 Mdot
+0.88485 0.24706 Mdot
+0.8858 0.53826 Mdot
+0.88676 0.28848 Mdot
+0.88771 0.58258 Mdot
+0.88866 0.35172 Mdot
+0.88961 0.05883 Mdot
+0.89056 0.30019 Mdot
+0.89151 0.59457 Mdot
+0.89246 0.36942 Mdot
+0.89342 0.07808 Mdot
+0.89437 0.32729 Mdot
+0.89532 0.03313 Mdot
+0.89627 0.26302 Mdot
+0.89722 0.55568 Mdot
+0.89817 0.31294 Mdot
+0.89912 0.0185 Mdot
+0.90008 0.24135 Mdot
+0.90103 0.53193 Mdot
+0.90198 0.27971 Mdot
+0.90293 0.57343 Mdot
+0.90388 0.3384 Mdot
+0.90483 0.04469 Mdot
+0.90578 0.27988 Mdot
+0.90674 0.57361 Mdot
+0.90769 0.33866 Mdot
+0.90864 0.04496 Mdot
+0.90959 0.28026 Mdot
+0.91054 0.57402 Mdot
+0.91149 0.33925 Mdot
+0.91244 0.04558 Mdot
+0.9134 0.28116 Mdot
+0.91435 0.57495 Mdot
+0.9153 0.34061 Mdot
+0.91625 0.04701 Mdot
+0.9172 0.28323 Mdot
+0.91815 0.57712 Mdot
+0.9191 0.34375 Mdot
+0.92006 0.05033 Mdot
+0.92101 0.28802 Mdot
+0.92196 0.5821 Mdot
+0.92291 0.35102 Mdot
+0.92386 0.05808 Mdot
+0.92481 0.29912 Mdot
+0.92576 0.59348 Mdot
+0.92672 0.3678 Mdot
+0.92767 0.0763 Mdot
+0.92862 0.32481 Mdot
+0.92957 0.03058 Mdot
+0.93052 0.25926 Mdot
+0.93147 0.55161 Mdot
+0.93242 0.30719 Mdot
+0.93338 0.60163 Mdot
+0.93433 0.37994 Mdot
+0.93528 0.08978 Mdot
+0.93623 0.34346 Mdot
+0.93718 0.05003 Mdot
+0.93813 0.28758 Mdot
+0.93908 0.58164 Mdot
+0.94004 0.35035 Mdot
+0.94099 0.05737 Mdot
+0.94194 0.2981 Mdot
+0.94289 0.59245 Mdot
+0.94384 0.36626 Mdot
+0.94479 0.07461 Mdot
+0.94574 0.32245 Mdot
+0.9467 0.02816 Mdot
+0.94765 0.25569 Mdot
+0.9486 0.54773 Mdot
+0.94955 0.30172 Mdot
+0.9505 0.59612 Mdot
+0.95145 0.37172 Mdot
+0.9524 0.08062 Mdot
+0.95336 0.33083 Mdot
+0.95431 0.03679 Mdot
+0.95526 0.26837 Mdot
+0.95621 0.56142 Mdot
+0.95716 0.32112 Mdot
+0.95811 0.0268 Mdot
+0.95906 0.25368 Mdot
+0.96002 0.54554 Mdot
+0.96097 0.29864 Mdot
+0.96192 0.593 Mdot
+0.96287 0.36708 Mdot
+0.96382 0.07551 Mdot
+0.96477 0.32371 Mdot
+0.96572 0.02945 Mdot
+0.96668 0.25759 Mdot
+0.96763 0.54981 Mdot
+0.96858 0.30463 Mdot
+0.96953 0.59907 Mdot
+0.97048 0.37611 Mdot
+0.97143 0.08549 Mdot
+0.97238 0.33757 Mdot
+0.97334 0.04382 Mdot
+0.97429 0.27861 Mdot
+0.97524 0.57228 Mdot
+0.97619 0.33672 Mdot
+grestore
+% End of Graphics
+MathPictureEnd
+:[font = output; output; inactive; preserveAspect; endGroup; ]
+The Unformatted text for this cell was not generated.
+Use options in the Actions Settings dialog box to control
+when Unformatted text is generated.
+;[o]
+-Graphics-
+^*)
